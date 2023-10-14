@@ -13,7 +13,10 @@ const DigitalClock = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const formattedTime = time.toLocaleTimeString();
+  const formattedTime = time.toLocaleString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
 
   return <div>{formattedTime}</div>;
 };

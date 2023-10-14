@@ -1,16 +1,22 @@
-import DigitalClock from "./digital-clock";
+import Widget from "./components/widget";
+import DigitalClock from "./components/digital-clock";
 
 export default function Home() {
   return (
-    <div className="bg-gray-100 h-screen columns-3 gap-5 p-20">
-      <div className="transition ease-in-out hover:scale-110 hover:bg-blue-500 hover:ring-blue-500 hover:shadow-xl group p-3 ring-1 ring-slate-200 bg-white shadow-lg rounded-lg my-10 py-8 px-5 font-sans font-medium text-4xl text-center hover:text-gray-100 text-gray-400">
-        <DigitalClock />
-      </div>
-      <div className="transition ease-in-out hover:scale-110 hover:bg-blue-500 hover:ring-blue-500 hover:shadow-xl group p-3 ring-1 ring-slate-200 bg-white shadow-lg rounded-lg my-10 py-8 px-5 font-sans font-medium text-4xl text-center hover:text-gray-100 text-gray-400">
-        <DigitalClock />
-      </div>
-      <div className="transition ease-in-out hover:scale-110 hover:bg-blue-500 hover:ring-blue-500 hover:shadow-xl group p-3 ring-1 ring-slate-200 bg-white shadow-lg rounded-lg my-10 py-8 px-5 font-sans font-medium text-4xl text-center hover:text-gray-100 text-gray-400">
-        <DigitalClock />
+    <div className="grid bg-gray-100 place-items-center min-h-screen p-5">
+      <div className="grid gap-5 max-w-5xl grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <Widget>
+          <h1 class="text-4xl font-extrabold">Home</h1>
+        </Widget>
+        <Widget>1</Widget>
+        <Widget>2</Widget>
+        <Widget>3</Widget>
+        <Widget>4</Widget>
+        <Widget>5</Widget>
+        <Widget>6</Widget>
+        <Widget>
+          <DigitalClock />
+        </Widget>
       </div>
     </div>
   );
