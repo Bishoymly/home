@@ -6,7 +6,7 @@ export default function Home() {
     <div className="grid bg-gray-100 place-items-center min-h-screen p-5">
       <div className="grid gap-5 max-w-5xl grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         <Widget>
-          <h1 className="text-4xl font-extrabold">"Good morning"</h1>
+          <h1 className="text-4xl font-extrabold">Good morning</h1>
         </Widget>
         <Widget className="bg-cover bg-right bg-[url('/Sunny.webp')] text-white text-right align-bottom">
           65F
