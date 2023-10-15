@@ -18,7 +18,7 @@ const DigitalClock = () => {
     minute: "2-digit",
   });
 
-  return <div>{formattedTime}</div>;
+  return <span>{formattedTime}</span>;
 };
 
 export default DigitalClock;
