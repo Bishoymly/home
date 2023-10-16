@@ -1,9 +1,9 @@
 "use client";
-import Widget from "@/app/components/widget";
+import Widget from "@/components/widget";
 
 export default function () {
   return (
-    <Widget className="col-span-2 row-span-1 rect-2-1 flex items-center justify-center">
+    <Widget className="aspect-2/1 col-span-2 row-span-1 flex items-center justify-center">
       <h1 className="text-4xl font-extrabold">{saySomthing()}</h1>
     </Widget>
   );

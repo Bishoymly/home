@@ -1,5 +1,5 @@
 "use client";
-import Widget from "@/app/components/widget";
+import Widget from "@/components/widget";
 
 import { useState, useEffect } from "react";
 
@@ -20,7 +20,7 @@ const DigitalClock = () => {
   });
 
   return (
-    <Widget className="square bg-gradient-to-r from-cyan-500 to-blue-500 square flex items-center justify-center">
+    <Widget className="aspect-square bg-gradient-to-r from-cyan-500 to-blue-500 square flex items-center justify-center">
       <span className="text-white">{formattedTime}</span>
     </Widget>
   );
