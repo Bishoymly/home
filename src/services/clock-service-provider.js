@@ -20,7 +20,7 @@ const DigitalClock = () => {
   });
 
   return (
-    <Widget className="aspect-square bg-gradient-to-r from-cyan-500 to-blue-500 square flex items-center justify-center">
+    <Widget className="bg-gradient-to-r from-cyan-500 to-blue-500 square flex items-center justify-center">
       <span className="text-white">{formattedTime}</span>
     </Widget>
   );
