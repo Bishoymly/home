@@ -2,7 +2,7 @@
 import Widget from "@/components/widget";
 import { useEffect, useState } from "react";
 
-export default function () {
+export default function WeatherService() {
   const [weather, setWeather] = useState({});
 
   useEffect(() => {
@@ -22,13 +22,16 @@ export default function () {
 
   return weather.weather ? (
     <Widget className="aspect-square flex items-center justify-center">
+      <div>
+        {Math.round(weather.main?.temp)} <span className="text-sm">°F</span>
+        <p className="text- text-sm">{weather?.name}</p>
+      </div>
       <img
         src={`http://openweathermap.org/img/wn/${
           weather.weather ? weather.weather[0].icon : "01d"
         }.png`}
         alt={weather.weather ? weather.weather[0].description : "Loading"}
       />
-      {Math.round(weather.main?.temp) + "°F"}
     </Widget>
   ) : null;
 }
