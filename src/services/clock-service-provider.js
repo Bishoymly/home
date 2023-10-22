@@ -3,9 +3,8 @@ import Widget from "@/components/widget";
 
 import { useState, useEffect } from "react";
 
-const DigitalClock = () => {
+const DigitalClock = (props) => {
   const [time, setTime] = useState(new Date());
-
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date());
@@ -20,7 +19,10 @@ const DigitalClock = () => {
   });
 
   return (
-    <Widget className="bg-gradient-to-r from-cyan-500 to-blue-500 square flex items-center justify-center">
+    <Widget
+      {...props}
+      className={`bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center`}
+    >
       <span className="text-white">{formattedTime}</span>
     </Widget>
   );

@@ -2,7 +2,7 @@
 import Widget from "@/components/widget";
 import { useEffect, useState } from "react";
 
-export default function WeatherService() {
+export default function WeatherService(props) {
   const [weather, setWeather] = useState({});
 
   useEffect(() => {
@@ -21,7 +21,11 @@ export default function WeatherService() {
   };
 
   return weather.weather ? (
-    <Widget className="aspect-square flex items-center justify-center">
+    <Widget
+      key="weather"
+      className="flex items-center justify-center"
+      {...props}
+    >
       <div>
         {Math.round(weather.main?.temp)} <span className="text-sm">°F</span>
         <p className="text- text-sm">{weather?.name}</p>
@@ -33,5 +37,7 @@ export default function WeatherService() {
         alt={weather.weather ? weather.weather[0].description : "Loading"}
       />
     </Widget>
-  ) : null;
+  ) : (
+    <span key="weather"></span>
+  );
 }

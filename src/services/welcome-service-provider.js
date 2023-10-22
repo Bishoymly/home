@@ -2,17 +2,23 @@
 import Widget from "@/components/widget";
 import { useEffect, useState } from "react";
 
-export default function Welcome() {
+export default function Welcome(props) {
   const [step, setStep] = useState(1);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setStep(step + 1);
     }, 5000);
-  });
+
+    return () => clearInterval(interval);
+  }, [step]);
 
   return (
-    <Widget className="col-span-2 row-span-1 flex items-center justify-center">
+    <Widget
+      key="welcome"
+      className="flex items-center justify-center"
+      {...props}
+    >
       <h1 className="text-4xl font-extrabold">{saySomthing(step)}</h1>
     </Widget>
   );
