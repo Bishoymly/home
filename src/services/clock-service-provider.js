@@ -46,8 +46,8 @@ const DigitalClock = (props) => {
       {...props}
       className={`bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col items-center justify-center`}
     >
+      <p className="text-white text-3xl">{formattedTime}</p>
       <p className="text-white text-lg">{formattedDate}</p>
-      <p className="text-white text-xl2">{formattedTime}</p>
     </Widget>
   );
 };
