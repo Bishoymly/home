@@ -18,12 +18,36 @@ const DigitalClock = (props) => {
     minute: "2-digit",
   });
 
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  const dayName = dayNames[time.getDay()];
+  const month = monthNames[time.getMonth()];
+  const day = time.getDate();
+
+  const formattedDate = `${dayName}, ${month} ${day}`;
+
   return (
     <Widget
       {...props}
-      className={`bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center`}
+      className={`bg-gradient-to-r from-cyan-500 to-blue-500 flex flex-col items-center justify-center`}
     >
-      <span className="text-white">{formattedTime}</span>
+      <p className="text-white text-lg">{formattedDate}</p>
+      <p className="text-white text-xl2">{formattedTime}</p>
     </Widget>
   );
 };
