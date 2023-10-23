@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import DigitalClock from "../services/clock-service-provider";
 import WeatherService from "../services/weather-service-provider";
 import Welcome from "../services/welcome-service-provider";
+import News from "@/services/news";
 
 const Screen = () => {
   const tileWidthInPixels = 160; // Width of each tile in pixels
@@ -20,6 +21,7 @@ const Screen = () => {
       targetX: 1,
       targetY: 1,
       type: DigitalClock,
+      priority: 2,
     },
     {
       key: "welcome",
@@ -28,6 +30,7 @@ const Screen = () => {
       targetX: 0,
       targetY: 0,
       type: Welcome,
+      priority: 2,
     },
     {
       key: "weather",
@@ -35,7 +38,17 @@ const Screen = () => {
       height: 1,
       targetX: -1,
       targetY: -1,
+      priority: 1,
       type: WeatherService,
+    },
+    {
+      key: "news",
+      width: 2,
+      height: 3,
+      targetX: -1,
+      targetY: -1,
+      priority: 5,
+      type: News,
     },
   ]);
 
