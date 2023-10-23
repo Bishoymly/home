@@ -28,8 +28,11 @@ export default function News(props) {
     >
       <span className="text-xl flex items-start p-3">News</span>
       <ul className="divide-y divide-slate-100">
-        {news.articles.map((a) => (
-          <article className="flex items-start space-x-4 p-3 hover:opacity-80">
+        {news.articles.map((a, index) => (
+          <article
+            key={`news-${index}`}
+            className="flex items-start space-x-4 p-3 hover:opacity-80"
+          >
             <img
               src={a.urlToImage}
               alt=""
