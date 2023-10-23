@@ -143,6 +143,8 @@ const Screen = () => {
           let newWidget = { ...widget };
           newWidget.x = x;
           newWidget.y = y;
+          newWidget.width = width;
+          newWidget.height = height;
           newWidget.style = {
             transform: `translate(${
               leftPaddingInPixels + x * tileWidthInPixels + x * gapInPixels
@@ -150,11 +152,11 @@ const Screen = () => {
               topPaddingInPixels + y * tileWidthInPixels + y * gapInPixels
             }px)`,
             width:
-              tileWidthInPixels * widget.width +
-              (widget.width - 1) * gapInPixels,
+              tileWidthInPixels * newWidget.width +
+              (newWidget.width - 1) * gapInPixels,
             height:
-              tileWidthInPixels * widget.height +
-              (widget.height - 1) * gapInPixels,
+              tileWidthInPixels * newWidget.height +
+              (newWidget.height - 1) * gapInPixels,
           };
 
           newWidgets[index] = newWidget;
@@ -169,7 +171,7 @@ const Screen = () => {
     // Place widgets on the grid
     for (let i = 0; i < widgetList.length; i++) {
       const widget = widgetList[i];
-      const { width, height, targetX, targetY } = widget;
+      let { width, height, targetX, targetY } = widget;
 
       // Try to find a suitable location around the target
       const startX = Math.round(
@@ -178,6 +180,10 @@ const Screen = () => {
       const startY = Math.round(
         (targetY * gridHeight) / 2 + gridHeight / 2 - height / 2
       );
+
+      if (width > gridWidth) width = gridWidth;
+      if (height > gridHeight) height = gridHeight;
+
       spiralLoopTillYouFindASpot(startX, startY, width, height, widget, i);
     }
     if (isChanged) {
