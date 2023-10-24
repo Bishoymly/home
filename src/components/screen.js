@@ -6,7 +6,7 @@ import Welcome from "@/services/welcome";
 import News from "@/services/news";
 
 const Screen = () => {
-  const tileWidthInPixels = 160; // Width of each tile in pixels
+  const tileWidthInPixels = 144; // Width of each tile in pixels
   const gapInPixels = 16; // Gap between tiles in pixels
   const paddingInPixels = 16; // Padding for the screen in pixels
 
@@ -126,6 +126,17 @@ const Screen = () => {
         }
       }
 
+      // hide the widget if there is no place for it
+      isChanged = true;
+      let newWidget = { ...widget };
+      newWidget.style = {
+        left: 0,
+        top: 0,
+        opacity: 0,
+      };
+
+      newWidgets[index] = newWidget;
+
       return false;
     }
 
@@ -146,6 +157,7 @@ const Screen = () => {
           newWidget.width = width;
           newWidget.height = height;
           newWidget.style = {
+            opacity: 1,
             transform: `translate(${
               leftPaddingInPixels + x * tileWidthInPixels + x * gapInPixels
             }px,${

@@ -19,7 +19,7 @@ export default function Welcome(props) {
       className="flex items-center justify-center"
       {...props}
     >
-      <h1 className="text-4xl font-extrabold">{saySomthing(step)}</h1>
+      <h1 className="text-3xl font-extrabold">{saySomthing(step)}</h1>
     </Widget>
   );
 }
