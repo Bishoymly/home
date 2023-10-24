@@ -2,7 +2,7 @@
 import Widget from "@/components/widget";
 import { useEffect, useState } from "react";
 
-export default function WeatherService(props) {
+export default function Weather(props) {
   const [weather, setWeather] = useState({});
 
   useEffect(() => {

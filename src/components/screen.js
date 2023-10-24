@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import DigitalClock from "../services/clock-service-provider";
-import WeatherService from "../services/weather-service-provider";
-import Welcome from "../services/welcome-service-provider";
+import DigitalClock from "@/services/digital-clock";
+import Weather from "@/services/weather";
+import Welcome from "@/services/welcome";
 import News from "@/services/news";
 
 const Screen = () => {
@@ -39,7 +39,7 @@ const Screen = () => {
       targetX: -1,
       targetY: -1,
       priority: 1,
-      type: WeatherService,
+      type: Weather,
     },
     {
       key: "news",
